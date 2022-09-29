@@ -1,24 +1,13 @@
 # vitc
 
-## Project setup
+## Project build
+
 ```
-npm install
+make build
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Project start
 
-### Compiles and minifies for production
 ```
-npm run build
+make start
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
