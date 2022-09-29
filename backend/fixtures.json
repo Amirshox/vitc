@@ -1,0 +1,20 @@
+[
+  {
+    "model": "contacts.tag",
+    "pk": 1,
+    "fields": {
+      "created_at": "2022-09-29T16:51:25.924Z",
+      "updated_at": "2022-09-29T16:51:25.924Z",
+      "title": "Work"
+    }
+  },
+  {
+    "model": "contacts.tag",
+    "pk": 2,
+    "fields": {
+      "created_at": "2022-09-29T16:51:31.872Z",
+      "updated_at": "2022-09-29T16:51:31.872Z",
+      "title": "Family"
+    }
+  }
+]
