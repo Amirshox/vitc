@@ -30,6 +30,6 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
 
-__all__ = (
-    'UserSerializer',
-)
+__all__ = [
+    'UserSerializer'
+]

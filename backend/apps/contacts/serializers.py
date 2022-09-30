@@ -41,3 +41,9 @@ class ContactSerializer(serializers.ModelSerializer):
         self.fields['father'] = ParentContactSerializer()
         self.fields['mother'] = ParentContactSerializer()
         return super().to_representation(instance)
+
+
+__all__ = [
+    'TagSerializer',
+    'ContactSerializer'
+]

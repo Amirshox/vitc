@@ -63,6 +63,6 @@ class UserManager(BaseUserManager):
         return self.none()
 
 
-__all__ = (
+__all__ = [
     'UserManager'
-)
+]

@@ -10,3 +10,8 @@ class UserViewSet(CreateModelMixin, RetrieveModelMixin, UpdateModelMixin, Generi
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = (IsUserOwner,)
+
+
+__all__ = [
+    'UserViewSet'
+]

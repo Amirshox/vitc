@@ -50,7 +50,7 @@ class Contact(BaseModel):
         return self.full_name
 
 
-__all__ = (
+__all__ = [
     "Tag",
     "Contact"
-)
+]

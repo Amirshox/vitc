@@ -9,6 +9,6 @@ class IsContactOwner(IsAuthenticated):
         return contact.user == request.user
 
 
-__all__ = (
-    "IsContactOwner",
-)
+__all__ = [
+    "IsContactOwner"
+]
