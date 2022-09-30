@@ -27,14 +27,16 @@ class ContactSerializer(serializers.ModelSerializer):
         exclude = ('created_at', 'updated_at', 'user')
 
     def validate_father(self, value: Contact):
-        if value.gender == Contact.MALE:
-            return value
-        raise ValidationError(detail="Father's gender must be male")
+        if value:
+            if value.gender == Contact.MALE:
+                return value
+            raise ValidationError(detail="Father's gender must be male")
 
     def validate_mother(self, value: Contact):
-        if value.gender == Contact.FEMALE:
-            return value
-        raise ValidationError(detail="Mother's gender must be female")
+        if value:
+            if value.gender == Contact.FEMALE:
+                return value
+            raise ValidationError(detail="Mother's gender must be female")
 
     def to_representation(self, instance):
         self.fields['tags'] = TagSerializer(many=True)
