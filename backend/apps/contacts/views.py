@@ -27,7 +27,7 @@ class ContactViewSet(ModelViewSet):
     def get_queryset(self):
         queryset = self.queryset.filter(user_id=self.request.user.id)
 
-        tags_id = self.request.query_params.getlist('tag')
+        tags_id = self.request.query_params.getlist('tags')
         gender = self.request.query_params.get('gender')
         search = self.request.query_params.get('search')
 
