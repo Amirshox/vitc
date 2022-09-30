@@ -28,15 +28,21 @@ class ContactViewSet(ModelViewSet):
         queryset = self.queryset.filter(user_id=self.request.user.id)
 
         tags_id = self.request.query_params.getlist('tag')
+        gender = self.request.query_params.get('gender')
         search = self.request.query_params.get('search')
 
         if tags_id:
             queryset = queryset.filter(tags__in=tags_id)
 
+        if gender:
+            queryset = queryset.filter(gender=gender)
+
         if search:
             queryset = queryset.filter(
-                Q(full_name__search=search) | Q(email__search=search) | Q(phone_number__search=search)
-            )  # __search PostgreSQL support
+                Q(full_name__icontains=search) |
+                Q(email__icontains=search) |
+                Q(phone_number__icontains=search)
+            ).distinct()
 
         return queryset
 

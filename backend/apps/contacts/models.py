@@ -48,3 +48,9 @@ class Contact(BaseModel):
 
     def __str__(self):
         return self.full_name
+
+
+__all__ = (
+    "Tag",
+    "Contact"
+)

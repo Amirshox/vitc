@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.exceptions import ValidationError
 
 from .models import Tag, Contact
 
@@ -24,6 +25,16 @@ class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
         exclude = ('created_at', 'updated_at', 'user')
+
+    def validate_father(self, value: Contact):
+        if value.gender == Contact.MALE:
+            return value
+        raise ValidationError(detail="Father's gender must be male")
+
+    def validate_mother(self, value: Contact):
+        if value.gender == Contact.FEMALE:
+            return value
+        raise ValidationError(detail="Mother's gender must be female")
 
     def to_representation(self, instance):
         self.fields['tags'] = TagSerializer(many=True)

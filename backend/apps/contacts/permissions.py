@@ -7,3 +7,8 @@ class IsContactOwner(IsAuthenticated):
     # for object level permissions
     def has_object_permission(self, request, view, contact):
         return contact.user == request.user
+
+
+__all__ = (
+    "IsContactOwner",
+)
