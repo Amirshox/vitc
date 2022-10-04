@@ -17,7 +17,7 @@ class TagViewSet(mixins.CreateModelMixin, mixins.DestroyModelMixin, mixins.ListM
 
 
 class ContactViewSet(ModelViewSet):
-    queryset = Contact.objects.all()
+    queryset = Contact.objects.defer('user').prefetch_related('tags').select_related('father', 'mother').all()
     serializer_class = ContactSerializer
     permission_classes = (IsContactOwner,)
 

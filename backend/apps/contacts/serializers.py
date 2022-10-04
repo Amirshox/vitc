@@ -27,12 +27,14 @@ class ContactSerializer(serializers.ModelSerializer):
         exclude = ('created_at', 'updated_at', 'user')
 
     def validate_father(self, value: Contact):
+        # check gender of father
         if value:
             if value.gender == Contact.MALE:
                 return value
             raise ValidationError(detail="Father's gender must be male")
 
     def validate_mother(self, value: Contact):
+        # check gender of mother
         if value:
             if value.gender == Contact.FEMALE:
                 return value
