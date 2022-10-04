@@ -5,7 +5,8 @@
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
           <router-link to="/home" class="nav-link" v-if="currentUser">
-            <font-awesome-icon icon="home" />Home
+            <font-awesome-icon icon="home"/>
+            Home
           </router-link>
         </li>
         <!-- <li v-if="showAdminBoard" class="nav-item">
@@ -22,12 +23,14 @@
       <div v-if="!currentUser" class="navbar-nav ml-auto">
         <li class="nav-item">
           <router-link to="/register" class="nav-link">
-            <font-awesome-icon icon="user-plus" /> Sign Up
+            <font-awesome-icon icon="user-plus"/>
+            Sign Up
           </router-link>
         </li>
         <li class="nav-item">
           <router-link to="/login" class="nav-link">
-            <font-awesome-icon icon="sign-in-alt" /> Login
+            <font-awesome-icon icon="sign-in-alt"/>
+            Login
           </router-link>
         </li>
       </div>
@@ -41,14 +44,15 @@
         </li> -->
         <li class="nav-item">
           <a class="nav-link" href @click.prevent="logOut">
-            <font-awesome-icon icon="sign-out-alt" /> LogOut
+            <font-awesome-icon icon="sign-out-alt"/>
+            LogOut
           </a>
         </li>
       </div>
     </nav>
 
     <div class="container">
-      <router-view />
+      <router-view/>
     </div>
   </div>
 </template>
