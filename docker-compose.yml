@@ -25,7 +25,7 @@ services:
     volumes:
       - .:/app
     ports:
-      - "8002:8000"
+      - "8081:8000"
     depends_on:
       - db
   vue:
