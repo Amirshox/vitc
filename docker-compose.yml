@@ -9,8 +9,8 @@ services:
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: db
     restart: unless-stopped
-    ports:
-      - "5432:5432"
+#    ports:
+#      - "5432:5432"
   django:
     build:
       context: .
